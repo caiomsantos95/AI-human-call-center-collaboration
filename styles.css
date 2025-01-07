@@ -1,0 +1,344 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f9fc;
+    color: #2c3e50;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* KPI Widgets */
+.kpi-widgets {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.kpi-widget {
+    background-color: white;
+    width: 23%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.kpi-widget h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.kpi-widget p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+main {
+    padding: 20px;
+}
+
+.calls-section {
+    margin-bottom: 40px;
+}
+
+.calls-section h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.calls-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.calls-table th, .calls-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.calls-table th {
+    background-color: #ecf6fc;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.calls-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.calls-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+.calls-table tbody tr:hover {
+    background-color: #f1f7fd;
+    cursor: pointer;
+}
+
+.calls-table td.action-cell {
+    text-align: center;
+}
+
+.action-button {
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #c0392b;
+}
+
+/* Risk Score Colors */
+.low-risk {
+    background-color: #d4edda; /* Light green */
+}
+
+.medium-risk {
+    background-color: #fff3cd; /* Light yellow */
+}
+
+.high-risk {
+    background-color: #f8d7da; /* Light red */
+}
+
+/* Rotating Symbol */
+.rotating-symbol {
+    animation: rotation 2s infinite linear;
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+/* Center the symbol */
+.symbol-cell {
+    text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(44,62,80,0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    color: #2c3e50;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover, .close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.modal-content ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.modal-content ol li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Intervene Modal Styles */
+.intervene-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.connecting-animation {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connecting-animation .circle {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #3498db;
+    animation: bounce 1.5s infinite;
+}
+
+.connecting-animation .circle:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.connecting-animation .circle:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Return Button */
+.return-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.return-button:hover {
+    background-color: #2980b9;
+}
+
+/* Chatbot Modal Styles */
+.chatbot-content {
+    width: 400px;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-messages {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.chatbot-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #d4edda; /* Light green */
+    align-self: flex-end;
+}
+
+.ai-message {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.chatbot-input-area {
+    display: flex;
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+.chatbot-input-area button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.chatbot-input-area button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
+
+    .kpi-widget {
+        width: 48%;
+    }
+
+    .chatbot-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kpi-widget {
+        width: 100%;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call Center Manager Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Lisa's Call Center Dashboard</h1>
+        </header>
+        <main>
+            <!-- KPI Widgets -->
+            <div class="kpi-widgets">
+                <div class="kpi-widget">
+                    <h3>Total Active Calls</h3>
+                    <p id="kpiActiveCalls">0</p>
+                </div>
+                <div class="kpi-widget">
+                    <h3>Total Concluded Calls</h3>
+                    <p id="kpiConcludedCalls">0</p>
+                </div>
+                <div class="kpi-widget">
+                    <h3>Average Risk Score</h3>
+                    <p id="kpiAverageRisk">0</p>
+                </div>
+                <div class="kpi-widget">
+                    <h3>Total Escalations</h3>
+                    <p id="kpiTotalEscalations">0</p>
+                </div>
+            </div>
+
+            <section class="calls-section">
+                <h2>Active Calls</h2>
+                <table class="calls-table">
+                    <thead>
+                        <tr>
+                            <th></th> <!-- For the rotating symbol -->
+                            <th>Call ID</th>
+                            <th>Customer</th>
+                            <th>Intent</th>
+                            <th>Risk Score</th>
+                            <th>Status</th>
+                            <th>Action</th> <!-- For the Intervene/Assist button -->
+                        </tr>
+                    </thead>
+                    <tbody id="activeCallsTableBody">
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </section>
+            <section class="calls-section">
+                <h2>Concluded Calls</h2>
+                <table class="calls-table">
+                    <thead>
+                        <tr>
+                            <th>Call ID</th>
+                            <th>Customer</th>
+                            <th>Intent</th>
+                            <th>Risk Score</th>
+                            <th>Resolution Summary</th>
+                            <th>Handled By</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="concludedCallsTableBody">
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Call Details -->
+    <div id="callModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2>Call Details - ID: <span id="modalCallId"></span></h2>
+            <p><strong>Customer:</strong> <span id="modalCustomer"></span></p>
+            <p><strong>Intent:</strong> <span id="modalIntent"></span></p>
+            <p><strong>Risk Score:</strong> <span id="modalRiskScore"></span></p>
+            <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+            <p><strong>Handled By:</strong> <span id="modalHandledBy"></span></p>
+            <h3>Resolution Summary</h3>
+            <p id="modalResolutionSummary"></p>
+            <h3>AI Troubleshooting Steps</h3>
+            <ol id="modalDecisionTrail">
+                <!-- Dynamic content -->
+            </ol>
+            <!-- Return Button -->
+            <button class="return-button" id="modalReturnButton">Return to Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Modal for Intervening in Call -->
+    <div id="interveneModal" class="modal">
+        <div class="modal-content intervene-content">
+            <h2>Connecting to Call ID: <span id="interveneCallId"></span></h2>
+            <div class="connecting-animation">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <p>Please wait while you are being connected...</p>
+            <!-- Return Button -->
+            <button class="return-button" id="interveneReturnButton">Return to Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbotModal" class="modal">
+        <div class="modal-content chatbot-content">
+            <span class="close-button" id="chatbotCloseButton">&times;</span>
+            <h2 id="chatbotHeader"></h2>
+            <div id="chatbotMessages" class="chatbot-messages">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." />
+                <button id="chatbotSendButton">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
